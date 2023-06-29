@@ -1,11 +1,13 @@
-import { Component } from '@angular/core';
+import { Entrada } from './models/entrada.model';
+import { Component, OnInit } from '@angular/core';
+import { DashboardService } from '../../service/dashboard.service';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit{
 
   meses = [
     {value: 0, viewValue: 'Janeiro'},
@@ -21,4 +23,46 @@ export class DashboardComponent {
     {value: 10, viewValue: 'Novembro'},
     {value: 11, viewValue: 'Dezembro'}
   ]
+
+  entradas: any[] = [];
+  saldo = 0;
+  despesa = 0;
+  receita = 0;
+
+  constructor(private dashboardService: DashboardService){
+
+  }
+
+  ngOnInit(): void {
+    this.dashboardService.getEntradas().subscribe(entradas =>{
+      this.entradas = entradas;
+      this.getReceitas();
+      this.getDespesas();
+      this.getSaldo();
+    });
+  }
+
+  getReceitas(){
+    this.entradas.forEach((entrada: Entrada) =>{
+
+      if(entrada.tipo == 'receita'){
+        this.receita += parseInt(entrada.valor);
+      }
+
+    })
+  }
+
+  getDespesas(){
+    this.entradas.forEach((entrada: Entrada) =>{
+
+      if(entrada.tipo == 'despesas'){
+        this.despesa += parseInt(entrada.valor);
+      }
+
+    })
+  }
+
+  getSaldo(){
+    this.saldo = this.receita - this.despesa;
+  }
 }
