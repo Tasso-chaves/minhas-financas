@@ -2,12 +2,10 @@ import { AfterContentInit, Component, ViewChild, OnInit } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { CategoriaService } from '../../service/categoria.service';
+import { Router } from '@angular/router';
+import { CategoriaModel } from '../../models/categoria.model';
 
-export interface CategoriaModel {
-  id: number;
-  nome: string;
-  descricao: string;
-}
+
 
 @Component({
   selector: 'app-list',
@@ -17,18 +15,17 @@ export interface CategoriaModel {
 export class ListComponent implements AfterContentInit, OnInit{
 
   ngAfterContentInit(): void {
-    throw new Error('Method not implemented.');
   }
 
-  displayedColumns: string[] = ['id', 'nome', 'descricao'];
+  displayedColumns: string[] = ['nome', 'descricao', 'editar', 'excluir'];
   dataSource = new MatTableDataSource<CategoriaModel>();
   categorias: CategoriaModel[] = [];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(private categoriaService: CategoriaService){
-
+  constructor(private categoriaService: CategoriaService, private router: Router){
   }
+
   ngOnInit(): void {
     this.categoriaService.getCategorias().subscribe((categorias: CategoriaModel[]) =>{
       this.categorias = categorias;
@@ -41,4 +38,7 @@ export class ListComponent implements AfterContentInit, OnInit{
     this.dataSource.paginator = this.paginator;
   }
 
+  chamarEdicao(categoria: CategoriaModel){
+    this.router.navigate(['categorias', 'editar', categoria.id]);
+  }
 }
