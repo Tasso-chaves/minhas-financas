@@ -1,6 +1,7 @@
 import { Observable } from 'rxjs';
 import { Injectable, Injector } from '@angular/core';
 import { HttpBaseService } from 'src/app/shared/base/http-base.service';
+import { CategoriaModel } from '../models/categoria.model';
 
 @Injectable({
   providedIn: 'root'
@@ -19,5 +20,17 @@ export class CategoriaService extends HttpBaseService{
 
   getCategoriasPeloId(id: number): Observable<any>{
     return this.httpGet(`${this.endpoint}/${id}`);
+  }
+
+  alterarCategoria(payload: CategoriaModel): Observable<any>{
+    return this.httpPut(`${this.endpoint}/${payload.id}`, payload);
+  }
+
+  excluirCategoria(id: number): Observable<any>{
+    return this.httpDelete(`${this.endpoint}/${id}`);
+  }
+
+  criarCategoria(payload: CategoriaModel): Observable<any>{
+    return this.httpPost(`${this.endpoint}`, payload);
   }
 }

@@ -5,7 +5,8 @@ import { FormularioComponent } from './components/formulario/formulario.componen
 
 const routes: Routes = [
   {path: '', component: ListComponent},
-  {path: 'editar/:id', component: FormularioComponent}
+  {path: 'editar/:id', component: FormularioComponent},
+  {path: 'nova-categoria', component: FormularioComponent}
 ];
 
 @NgModule({

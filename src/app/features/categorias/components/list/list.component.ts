@@ -27,18 +27,31 @@ export class ListComponent implements AfterContentInit, OnInit{
   }
 
   ngOnInit(): void {
+    this.buscarCategorias();
+  }
+
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
+  }
+
+  buscarCategorias(){
     this.categoriaService.getCategorias().subscribe((categorias: CategoriaModel[]) =>{
       this.categorias = categorias;
       this.dataSource.data = this.categorias;
     });
   }
 
-  ngAfterViewInit() {
-
-    this.dataSource.paginator = this.paginator;
-  }
-
   chamarEdicao(categoria: CategoriaModel){
     this.router.navigate(['categorias', 'editar', categoria.id]);
+  }
+
+  excluir(id: number){
+    this.categoriaService.excluirCategoria(id).subscribe(resposta => {
+      this.buscarCategorias();
+    });
+  }
+
+  novaCategoria(){
+    this.router.navigate(['categorias', 'nova-categoria']);
   }
 }
