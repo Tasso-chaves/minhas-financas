@@ -43,7 +43,13 @@ export class ListComponent {
     this.router.navigate(['entradas', 'editar', entrada.id]);
   }
 
+  excluir(id: number){
+    this.entradasService.excluirEntrada(id).subscribe((resposta =>{
+      this.buscarEntradas();
+    }))
+  }
+
   novaEntrada(){
-    this.router.navigate(['entradas', 'nova-entrada']);
+    this.router.navigate(['entradas', 'nova']);
   }
 }

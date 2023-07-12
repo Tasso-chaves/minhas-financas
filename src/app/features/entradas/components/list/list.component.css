@@ -13,3 +13,12 @@ table {
   flex-direction: row;
   justify-content: end;
 }
+
+.verde{
+  color: green;
+  font-weight: bold;
+}
+.vermelho{
+  color: red;
+  font-weight: bold;
+}

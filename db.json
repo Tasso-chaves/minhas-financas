@@ -19,6 +19,11 @@
       "id": 4,
       "nome": "Salário Empresa",
       "descricao": "Recebimento de salário"
+    },
+    {
+      "nome": "Categ",
+      "descricao": "Categ teste",
+      "id": 5
     }
   ],
   "entradas": [
@@ -46,7 +51,7 @@
       "categoriaId": 1,
       "pago": false,
       "data": "10/06/2023",
-      "valor": "166,50",
+      "valor": "500",
       "tipo": "despesas"
     },
     {
@@ -68,21 +73,12 @@
       "tipo": "despesas"
     },
     {
-      "id": 6,
-      "nome": "Uber",
-      "categoriaId": 3,
-      "pago": true,
-      "data": "28/05/2023",
-      "valor": "70",
-      "tipo": "despesas"
-    },
-    {
       "id": 7,
       "nome": "Salário analista",
       "categoriaId": 4,
       "pago": true,
       "data": "28/05/2023",
-      "valor": "1900,00",
+      "valor": "1900",
       "tipo": "receita"
     }
   ]

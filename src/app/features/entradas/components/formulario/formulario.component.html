@@ -1,1 +1,48 @@
-<p></p>
+<div class="container">
+
+  <form class="example-form" >
+    <mat-form-field class="example-full-width">
+      <mat-label>Entrada</mat-label>
+      <input matInput type="text">
+      <mat-error>A entrada é obrigatório!</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="espaco">
+      <mat-label>Categoria</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let food of foods" [value]="food.value">
+          {{food.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="espaco">
+      <mat-label>Status</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let food of foods" [value]="food.value">
+          {{food.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Tipo</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let food of foods" [value]="food.value">
+          {{food.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Selecione a data: MM/DD/YYYY</mat-label>
+      <input matInput [matDatepicker]="picker">
+      <!--<mat-hint>MM/DD/YYYY</mat-hint>-->
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </form>
+
+  <button mat-raised-button color="primary" [disabled]="">Salvar</button>
+</div>
+
