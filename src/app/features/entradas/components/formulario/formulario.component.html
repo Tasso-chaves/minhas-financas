@@ -1,48 +1,57 @@
 <div class="container">
+  <h1 class="center"> Cadastro de entradas</h1>
+</div>
+<div class="container flex">
 
-  <form class="example-form" >
-    <mat-form-field class="example-full-width">
+  <form class="example-form" [formGroup]="formEntradas">
+    <mat-form-field class="espaco">
       <mat-label>Entrada</mat-label>
-      <input matInput type="text">
+      <input matInput type="text" formControlName="nome">
       <mat-error>A entrada é obrigatório!</mat-error>
     </mat-form-field>
 
-    <mat-form-field class="espaco">
+    <mat-form-field>
+      <mat-label>Valor</mat-label>
+      <input matInput type="text" formControlName="valor">
+      <mat-error>O valor é obrigatório!</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
       <mat-label>Categoria</mat-label>
-      <mat-select>
-        <mat-option *ngFor="let food of foods" [value]="food.value">
-          {{food.viewValue}}
+      <mat-select formControlName="categoriaId">
+        <mat-option *ngFor="let categoria of categorias" [value]="categoria.id">
+          {{categoria.nome}}
         </mat-option>
       </mat-select>
     </mat-form-field>
 
-    <mat-form-field class="espaco">
+    <mat-form-field>
       <mat-label>Status</mat-label>
-      <mat-select>
-        <mat-option *ngFor="let food of foods" [value]="food.value">
-          {{food.viewValue}}
+      <mat-select formControlName="pago">
+        <mat-option *ngFor="let status of statusPagamento" [value]="status.value">
+          {{status.descricao}}
         </mat-option>
       </mat-select>
     </mat-form-field>
 
     <mat-form-field>
       <mat-label>Tipo</mat-label>
-      <mat-select>
-        <mat-option *ngFor="let food of foods" [value]="food.value">
-          {{food.viewValue}}
+      <mat-select formControlName="tipo">
+        <mat-option *ngFor="let tipo of tipoEntradas" [value]="tipo">
+          {{tipo}}
         </mat-option>
       </mat-select>
     </mat-form-field>
 
-    <mat-form-field class="example-full-width">
-      <mat-label>Selecione a data: MM/DD/YYYY</mat-label>
-      <input matInput [matDatepicker]="picker">
-      <!--<mat-hint>MM/DD/YYYY</mat-hint>-->
+    <mat-form-field>
+      <mat-label>Data de pagamento</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="data">
+      <mat-hint>MM/DD/YYYY</mat-hint>
       <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
   </form>
 
-  <button mat-raised-button color="primary" [disabled]="">Salvar</button>
+  <button mat-raised-button color="primary" (click)="salvarEntrada()">Salvar</button>
 </div>
 

@@ -1,6 +1,7 @@
 import { Injectable, Injector } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpBaseService } from 'src/app/shared/base/http-base.service';
+import { EntradaModel } from '../models/entrada.model';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,19 @@ export class EntradasService extends HttpBaseService {
     return this.httpGet(`${this.endpoint}`);
   }
 
+  getEntradasPeloId(id: number): Observable<any>{
+    return this.httpGet(`${this.endpoint}/${id}`);
+  }
+
   excluirEntrada(id: number): Observable<any>{
     return this.httpDelete(`${this.endpoint}/${id}`);
   }
+
+  criarEntrada(payload: EntradaModel): Observable<any>{
+     return this.httpPost(`${this.endpoint}`, payload);
+  }
+
+  editarEntrada(payload: EntradaModel): Observable<any>{
+    return this.httpPut(`${this.endpoint}/${payload.id}`, payload);
+ }
 }

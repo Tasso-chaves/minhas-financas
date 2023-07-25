@@ -34,7 +34,7 @@
       "pago": true,
       "data": "28/06/2023",
       "valor": "105",
-      "tipo": "despesas"
+      "tipo": "despesa"
     },
     {
       "id": 2,
@@ -43,7 +43,7 @@
       "pago": true,
       "data": "21/04/2023",
       "valor": "305",
-      "tipo": "despesas"
+      "tipo": "despesa"
     },
     {
       "id": 3,
@@ -52,16 +52,16 @@
       "pago": false,
       "data": "10/06/2023",
       "valor": "500",
-      "tipo": "despesas"
+      "tipo": "despesa"
     },
     {
-      "id": 4,
       "nome": "Gasolina",
       "categoriaId": 3,
+      "data": null,
       "pago": true,
-      "data": "30/06/2023",
-      "valor": "80",
-      "tipo": "despesas"
+      "tipo": "despesa",
+      "valor": "800",
+      "id": 4
     },
     {
       "id": 5,
@@ -70,7 +70,7 @@
       "pago": false,
       "data": "25/06/2023",
       "valor": "120",
-      "tipo": "despesas"
+      "tipo": "despesa"
     },
     {
       "id": 7,
@@ -80,6 +80,51 @@
       "data": "28/05/2023",
       "valor": "1900",
       "tipo": "receita"
+    },
+    {
+      "nome": "Bola futebol",
+      "categoriaId": 3,
+      "data": "2023-07-25T03:00:00.000Z",
+      "pago": true,
+      "tipo": "despesa",
+      "valor": "999",
+      "id": 8
+    },
+    {
+      "nome": "Academia",
+      "valor": "120",
+      "categoriaId": 2,
+      "pago": false,
+      "data": "2023-07-25T00:07:14.807Z",
+      "tipo": "despesa",
+      "id": 9
+    },
+    {
+      "nome": "Cinema",
+      "valor": "15",
+      "categoriaId": 3,
+      "pago": true,
+      "data": "2023-07-25T00:25:22.042Z",
+      "tipo": "despesa",
+      "id": 10
+    },
+    {
+      "nome": "Tet",
+      "categoriaId": "",
+      "data": null,
+      "pago": true,
+      "tipo": "despesa",
+      "valor": "123",
+      "id": 11
+    },
+    {
+      "nome": "Perfume",
+      "categoriaId": 1,
+      "data": "2023-07-25T01:13:05.196Z",
+      "pago": false,
+      "tipo": "despesa",
+      "valor": "123",
+      "id": 12
     }
   ]
 }
