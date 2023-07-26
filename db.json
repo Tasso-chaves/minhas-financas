@@ -28,20 +28,11 @@
   ],
   "entradas": [
     {
-      "id": 1,
-      "nome": "Gás de Cozinha",
-      "categoriaId": 1,
-      "pago": true,
-      "data": "28/06/2023",
-      "valor": "105",
-      "tipo": "despesa"
-    },
-    {
       "id": 2,
       "nome": "Mercado",
       "categoriaId": 1,
       "pago": true,
-      "data": "21/04/2023",
+      "data": "21-04-2023",
       "valor": "305",
       "tipo": "despesa"
     },
@@ -50,25 +41,16 @@
       "nome": "Aluguel",
       "categoriaId": 1,
       "pago": false,
-      "data": "10/06/2023",
+      "data": "10-06-2023",
       "valor": "500",
       "tipo": "despesa"
-    },
-    {
-      "nome": "Gasolina",
-      "categoriaId": 3,
-      "data": null,
-      "pago": true,
-      "tipo": "despesa",
-      "valor": "800",
-      "id": 4
     },
     {
       "id": 5,
       "nome": "Academia",
       "categoriaId": 2,
       "pago": false,
-      "data": "25/06/2023",
+      "data": "25-06-2023",
       "valor": "120",
       "tipo": "despesa"
     },
@@ -77,14 +59,14 @@
       "nome": "Salário analista",
       "categoriaId": 4,
       "pago": true,
-      "data": "28/05/2023",
+      "data": "28-05-2023",
       "valor": "1900",
       "tipo": "receita"
     },
     {
       "nome": "Bola futebol",
       "categoriaId": 3,
-      "data": "2023-07-25T03:00:00.000Z",
+      "data": "26-07-2023",
       "pago": true,
       "tipo": "despesa",
       "valor": "999",
@@ -95,7 +77,7 @@
       "valor": "120",
       "categoriaId": 2,
       "pago": false,
-      "data": "2023-07-25T00:07:14.807Z",
+      "data": "22-07-2023",
       "tipo": "despesa",
       "id": 9
     },
@@ -104,27 +86,36 @@
       "valor": "15",
       "categoriaId": 3,
       "pago": true,
-      "data": "2023-07-25T00:25:22.042Z",
+      "data": "16-07-2023",
       "tipo": "despesa",
       "id": 10
     },
     {
-      "nome": "Tet",
-      "categoriaId": "",
-      "data": null,
-      "pago": true,
-      "tipo": "despesa",
-      "valor": "123",
-      "id": 11
-    },
-    {
       "nome": "Perfume",
       "categoriaId": 1,
-      "data": "2023-07-25T01:13:05.196Z",
+      "data": "06-07-2023",
       "pago": false,
       "tipo": "despesa",
       "valor": "123",
       "id": 12
+    },
+    {
+      "nome": "et",
+      "categoriaId": 1,
+      "data": "20-07-2023",
+      "pago": true,
+      "tipo": "despesa",
+      "valor": "3",
+      "id": 13
+    },
+    {
+      "nome": "rr",
+      "categoriaId": 5,
+      "data": "26-07-2023",
+      "pago": true,
+      "tipo": "despesa",
+      "valor": "11",
+      "id": 14
     }
   ]
 }

@@ -88,9 +88,11 @@ export class FormularioComponent implements OnInit{
   }
 
   salvarEntrada(){
-    const data = dayjs(this.formEntradas.controls['data'].value).format('DD/MM/YYYY');
+    const data = dayjs(this.formEntradas.controls['data'].value).format('DD-MM-YYYY');
 
     const payloadRequest: EntradaModel = Object.assign('', this.formEntradas.getRawValue());
+
+    payloadRequest.data = data;
 
     const payload: EntradaModel = {
       nome: payloadRequest.nome,
