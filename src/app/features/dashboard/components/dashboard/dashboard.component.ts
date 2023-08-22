@@ -1,6 +1,7 @@
 import { Entrada } from './models/entrada.model';
 import { Component, OnInit } from '@angular/core';
 import { DashboardService } from '../../service/dashboard.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-dashboard',
@@ -29,38 +30,55 @@ export class DashboardComponent implements OnInit{
   despesa = 0;
   receita = 0;
 
-  constructor(private dashboardService: DashboardService){
+  formDashboard!: FormGroup;
+
+  constructor(private dashboardService: DashboardService,
+    private formBuilder: FormBuilder){
 
   }
 
   ngOnInit(): void {
+    this.criarFormulario();
+  }
+
+  getEntradas(){
+    this.entradas = [];
+    this.saldo = 0;
+    this.despesa = 0;
+    this.receita = 0;
+
+    //captura os dados dos campos
+    const payload = {
+      mes: this.formDashboard.controls['mes'].value + 1,
+      ano: this.formDashboard.controls['ano'].value
+    }
+
     this.dashboardService.getEntradas().subscribe(entradas =>{
       this.entradas = entradas;
       this.getReceitas();
-      this.getDespesas();
       this.getSaldo();
+    });
+  }
+
+  criarFormulario(){
+    this.formDashboard = this.formBuilder.group({
+      mes: ['', Validators.required],
+      ano: ['', Validators.required]
     });
   }
 
   getReceitas(){
     this.entradas.forEach((entrada: Entrada) =>{
 
-      if(entrada.tipo == 'receita'){
+      if(entrada.tipo === 'receita'){
         this.receita += parseInt(entrada.valor);
-      }
-
-    })
-  }
-
-  getDespesas(){
-    this.entradas.forEach((entrada: Entrada) =>{
-
-      if(entrada.tipo == 'despesas'){
+      }else{
         this.despesa += parseInt(entrada.valor);
       }
 
-    })
+    });
   }
+
 
   getSaldo(){
     this.saldo = this.receita - this.despesa;

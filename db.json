@@ -24,18 +24,14 @@
       "nome": "Categ",
       "descricao": "Categ teste",
       "id": 5
+    },
+    {
+      "nome": "CrosFit",
+      "descricao": "Só testando",
+      "id": 6
     }
   ],
   "entradas": [
-    {
-      "id": 2,
-      "nome": "Mercado",
-      "categoriaId": 1,
-      "pago": true,
-      "data": "21-04-2023",
-      "valor": "305",
-      "tipo": "despesa"
-    },
     {
       "id": 3,
       "nome": "Aluguel",
@@ -53,33 +49,6 @@
       "data": "25-06-2023",
       "valor": "120",
       "tipo": "despesa"
-    },
-    {
-      "id": 7,
-      "nome": "Salário analista",
-      "categoriaId": 4,
-      "pago": true,
-      "data": "28-05-2023",
-      "valor": "1900",
-      "tipo": "receita"
-    },
-    {
-      "nome": "Bola futebol",
-      "categoriaId": 3,
-      "data": "26-07-2023",
-      "pago": true,
-      "tipo": "despesa",
-      "valor": "999",
-      "id": 8
-    },
-    {
-      "nome": "Academia",
-      "valor": "120",
-      "categoriaId": 2,
-      "pago": false,
-      "data": "22-07-2023",
-      "tipo": "despesa",
-      "id": 9
     },
     {
       "nome": "Cinema",
@@ -114,7 +83,7 @@
       "data": "26-07-2023",
       "pago": true,
       "tipo": "despesa",
-      "valor": "11",
+      "valor": "12",
       "id": 14
     }
   ]
