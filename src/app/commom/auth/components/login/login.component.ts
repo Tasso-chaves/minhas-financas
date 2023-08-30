@@ -38,13 +38,13 @@ export class LoginComponent implements OnInit{
 
     console.log(this.authLogin);
 
-    this.authenticationService.loginAuth({email: this.authLogin.email, senha: this.authLogin.senha}).subscribe(
-      (user) =>{
+    this.authenticationService.loginAuth({email: this.authLogin.email, senha: this.authLogin.senha})
+    .subscribe((user) =>{
         if(user?.id){
           this.router.navigateByUrl('dashboard');
         }
       },
-      error =>{
+      (error) =>{
         this._snackBar.open('Ocorreu um erro no login!');
       }
     );
